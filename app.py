@@ -1997,11 +1997,31 @@ def ajuda():
     janela_ajuda = customtkinter.CTk()
     janela_ajuda.geometry('400x300')
     janela_ajuda.resizable(width=False, height=False)
+    janela_ajuda.title('AJUDA')
 
     texto_ajuda = customtkinter.CTkLabel(
-        janela_ajuda, text='COMO USAR', font=(''))
+        janela_ajuda, text='COMO USAR?', font=('Ubuntu Medium',16))
+    
 
     texto_ajuda.pack(padx=10, pady=10)
+    texto_introducao = customtkinter.CTkLabel(janela_ajuda,text='''PASSO 1 
+CLICK NO BOTÃO SELECIONAR(BOTÃO AZUL) E SELECIONE 
+OS PDFS SEGURANDO A TECLA CTRL.
+
+PASSO 2 
+LOGO APÓS SELECIONAR OS PDFS CLICK EM
+GERAR(BOTÃO VERDE)
+,ASSIM O PROGRAMA IRA GERAR AS PLANILHAS QUE
+SERÃO SALVAS ONDE ESTÁ LOCALIZADO O PROGRAMA.
+
+OBS:QUANTO MAIS PDFS FOR SELECIONADO 
+MAIS TEMPO LEVAR PARA GERAR AS PLANILHAS.
+                                             ''',font=('Ubuntu Medium',12))
+    
+    texto_introducao.pack(padx=10)
+    botao_ok = customtkinter.CTkButton(janela_ajuda, text='FECHAR',fg_color='red', command=janela_ajuda.destroy)
+    botao_ok.pack(padx=10, pady=10)
+    
     janela_ajuda.mainloop()
 
 
@@ -2011,7 +2031,7 @@ janela.maxsize(width=400, height=290)
 janela.minsize(width=250, height=290)
 janela.resizable(width=False, height=False)
 janela.title('GERADOR DE PLANILHA 3 EM 1')
-janela.iconbitmap('image_planilha.ico')
+
 
 
 texto = customtkinter.CTkLabel(
