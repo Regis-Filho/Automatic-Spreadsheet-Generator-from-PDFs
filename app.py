@@ -557,13 +557,20 @@ def gerar_palhilha():
                                     linha.split()[-3].replace('.', '').replace(',', '.'))
                                 print(
                                     f'2 1100 01 C REMUNERACAO DE FERIAS: {remuneracao_ferias}')
-
-                            # 2 1100 01 C REMUNERACAO DE FERIAS
-                            if '2 1100 06 C REMUNERACAO DE FERIAS' in linha:
-                                remuneracao_ferias += float(
-                                    linha.split()[-3].replace('.', '').replace(',', '.'))
-                                print(
-                                    f'2 1100 01 C REMUNERACAO DE FERIAS: {remuneracao_ferias}')
+                            try:
+                                # 2 1100 01 C REMUNERACAO DE FERIAS
+                                if '2 1100 06 C REMUNERACAO DE FERIAS' in linha:
+                                    remuneracao_ferias += float(
+                                        linha.split()[-3].replace('.', '').replace(',', '.'))
+                                    print(
+                                        f'2 1100 01 C REMUNERACAO DE FERIAS: {remuneracao_ferias}')
+                                    
+                            except:
+                                if '2 1100 06 C REMUNERACAO DE FERIAS' in linha:
+                                    remuneracao_ferias += float(
+                                        linha.split()[-2].replace('.', '').replace(',', '.'))
+                                    print(
+                                        f'2 1100 01 C REMUNERACAO DE FERIAS: {remuneracao_ferias}')
 
                             # 2 1100 01 C REMUNERACAO DE FERIAS
                             if '2 1100 07 C REMUNERACAO DE FERIAS' in linha:
