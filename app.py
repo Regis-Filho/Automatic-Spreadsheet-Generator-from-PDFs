@@ -1672,7 +1672,12 @@ def gerar_palhilha():
                                     mes_ano = mes_ano.replace(' ', '')
 
                                     index_comeco = pdf.index('Dia Semana')
-                                    index_final = pdf.index('Assinado')
+                                    if 'Documento assinado' in pdf:
+                                        index_final = pdf.index('Documento assinado')
+                        
+                                    else:
+                                        index_final = pdf.index('Assinado')
+                                    
                                     try:
 
                                         index_final_numero = pdf.index(
@@ -1809,7 +1814,7 @@ def gerar_palhilha():
 
                                     dia_repetido = dia
 
-                                # print(arquivo_com_dia_repetido)
+                                print(arquivo_com_dia_repetido)
 
                                 # remover listas vazia e que tem 1 item
                                 for i in range(3):
