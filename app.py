@@ -53,7 +53,11 @@ def gerar_palhilha():
                         # extraindo texto da pagina
                         pdf = page.extract_text()
 
-                        index_final = pdf.index('Assinado')
+                        if 'Documento assinado' in pdf:
+                            index_final = pdf.index('Documento assinado')
+                        
+                        else:
+                            index_final = pdf.index('Assinado')
 
                         index_comeco = pdf.index('Data Inicio')
 
